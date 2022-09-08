@@ -8781,7 +8781,10 @@ CREATE TABLE `visiteur` (
 -- Déchargement des données de la table `visiteur`
 --
 
+--Mot de passe pour utilisateur neo : simple
+
 INSERT INTO `visiteur` (`id`, `nom`, `prenom`, `login`, `mdp`, `adresse`, `cp`, `ville`, `dateEmbauche`) VALUES
+('1', 'Pagliara', 'Neo', 'pneo', '8dbdda48fb8748d6746f1965824e966a', '10 rue des fleurs', '75001', 'Paris', '2004-10-22'),
 ('a131', 'Villechalane', 'Louis', 'lvillachane', '92eb980737f1854076b2e34933286d8e', '8 rue des Charmes', '46000', 'Cahors', '2005-12-21'),
 ('a17', 'Andre', 'David', 'dandre', '37f2381c9a729782c38410b1ea5b8191', '1 rue Petit', '46200', 'Lalbenque', '1998-11-23'),
 ('a55', 'Bedos', 'Christian', 'cbedos', '26ec3c585ee973005c2744742d920dc3', '1 rue Peranud', '46250', 'Montcuq', '1995-01-12'),
