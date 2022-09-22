@@ -54,7 +54,7 @@ class PdoGsb{
  * @return l'id, le nom et le prénom sous la forme d'un tableau associatif 
 */
 	public function getInfosUtilisateur($login, $mdp){
-		$req = "select Utilisateur.id as id, Utilisateur.nom as nom, Utilisateur.prenom as prenom from Utilisateur 
+		$req = "select Utilisateur.id as id, Utilisateur.nom as nom, Utilisateur.prenom as prenom, Utilisateur.role as role from Utilisateur 
 		where Utilisateur.login='$login' and Utilisateur.mdp=md5('$mdp')";
 		$rs = PdoGsb::$monPdo->query($req);
 		$ligne = $rs->fetch();
