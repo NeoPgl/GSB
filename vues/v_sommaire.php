@@ -1,20 +1,18 @@
-﻿ <!-- Division pour le sommaire -->
- <div id="menuGauche">
+﻿<!-- Division pour le sommaire -->
+<div id="menuGauche">
      <div id="infosUtil">
-    
+
         <h2>
-    
+
 </h2>
-    
-      </div>  
+    <?php
+    $role = $_SESSION["role"];
+     if($role == 'V') {?>
+      </div>
         <ul id="menuList">
             <li >
-         <?php if ($_SESSION['role']=='V'){
-            echo 'Visiteur';
-         }else{
-            echo 'Comptable';
-         } ?> :<br>
-         <?php echo $_SESSION['prenom']." ".$_SESSION['nom'] ?>
+                  Visiteur :<br>
+                <?php echo $_SESSION['prenom']."  ".$_SESSION['nom']  ?>
             </li>
            <li class="smenu">
               <a href="index.php?uc=gererFrais&action=saisirFrais" title="Saisie fiche de frais ">Saisie fiche de frais</a>
@@ -26,5 +24,26 @@
               <a href="index.php?uc=connexion&action=deconnexion" title="Se déconnecter">Déconnexion</a>
            </li>
          </ul>
-        
+
     </div>
+    <?php }
+    else {?>
+      </div>
+        <ul id="menuList">
+            <li>
+                  Comptable :<br>
+                <?php echo $_SESSION['prenom']."  ".$_SESSION['nom']  ?>
+            </li>
+           <li class="smenu">
+              <a href="index.php?uc=validerFrais&action=validerFrais" title="Valider fiche de frais">Valider fiche de frais</a>
+           </li>
+           <li class="smenu">
+              <a href="index.php?uc=etatFrais&action=selectionnerMois" title="Suivi des fiches de frais">Suivi des fiche de frais</a>
+           </li>
+        <li class="smenu">
+              <a href="index.php?uc=connexion&action=deconnexion" title="Se déconnecter">Déconnexion</a>
+           </li>
+         </ul>
+
+    </div>
+    <?php }?>
